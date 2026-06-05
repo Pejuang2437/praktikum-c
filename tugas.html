@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Lokalana | Toko Fesyen UMKM Nusantara</title>
+  <meta name="description" content="Toko online UMKM fesyen lokal - produk berkualitas dari pengrajin Indonesia.">
+  <style>
+    /* RESET & GLOBAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', sans-serif;
+      background: #fef9f2;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid #c47b4b;
+      padding-left: 1rem;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER (dengan brand & hero area) */
+    .site-header {
+      background: linear-gradient(135deg, #1f3b2c 0%, #2a5238 100%);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-area h1 {
+      font-size: 1.8rem;
+      background: #e9b581;
+      background: linear-gradient(120deg, #f9d8b4, #f7bc7a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-area p {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+
+    /* NAVIGATION */
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #f3b37c;
+      color: #fde1b6;
+    }
+
+    /* tombol utama */
+    .btn-primary {
+      display: inline-block;
+      background-color: #d98c4a;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #bc6f36;
+      transform: scale(0.97);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* SECTION produk unggulan */
+    .featured-section {
+      padding: 3rem 0 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    /* ARTICLE card produk */
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+      transition: all 0.25s;
+      border: 1px solid #ffe6d5;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+      border-color: #efc9ae;
+    }
+
+    .product-img {
+      background: #f3ede7;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .product-info {
+      padding: 1.2rem;
+    }
+
+    .product-info h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-weight: 700;
+      color: #c5723a;
+      font-size: 1.3rem;
+      margin: 0.6rem 0;
+    }
+
+    .rating {
+      color: #f5b042;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ARTICLE testi / promo */
+    .promo-article {
+      background: #fff2e7;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 8px solid #d98c4a;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .promo-text h3 {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a2a24;
+      color: #ddd9ce;
+      margin-top: 3rem;
+      padding: 2rem 0 1.5rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+      color: #f2c69a;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-col p, .footer-col ul {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-col a {
+      color: #d9c2a7;
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #3a5346;
+      padding-top: 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .promo-article {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========================== HEADER (Semantic) ========================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <h1>🌿 Lokalana</h1>
+      <p>Warisan Nusantara | Karya UMKM Lokal</p>
+    </div>
+    <!-- ========================== NAVIGATION (Semantic) ========================== -->
+    <nav aria-label="Navigasi utama">
+      <ul class="nav-links">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Koleksi</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Kontak</a></li>
+        <li><a href="#">Keranjang 🛒</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- ========================== SECTION 1 : PRODUK UNGGULAN ========================== -->
+    <section class="featured-section" aria-labelledby="produk-unggulan">
+      <h2 id="produk-unggulan">✨ Koleksi Terlaris</h2>
+      <div class="product-grid">
+        <!-- article 1 -->
+        <article class="product-card">
+          <div class="product-img">👕🧵</div>
+          <div class="product-info">
+            <h3>Kemeja Tenun Sumba</h3>
+            <p>Tenun tangan motif ikat, katun premium</p>
+            <div class="rating">★★★★★ 5.0</div>
+            <div class="price">Rp 459.000</div>
+            <a href="#" class="btn-primary" style="padding:0.5rem 1.2rem; font-size:0.9rem;">Beli Sekarang</a>
+          </div>
+        </article>
+        <!-- article 2 -->
+        <article class="product-card">
+          <div class="product-img">👜🌾</div>
+          <div class="product-info">
+            <h3>Tas Anyam Mendong</h3>
+            <p>Anyaman alami, tahan lama & ramah lingkungan</p>
+            <div class="rating">★★★★☆ 4.8</div>
+            <div class="price">Rp 275.000</div>
+            <a href="#" class="btn-primary" style="padding:0.5rem 1.2rem; font-size:0.9rem;">Beli Sekarang</a>
+          </div>
+        </article>
+        <!-- article 3 -->
+        <article class="product-card">
+          <div class="product-img">👗🌸</div>
+          <div class="product-info">
+            <h3>Daster Batik Cirebon</h3>
+            <p>Batik tulis, nyaman dipakai sehari-hari</p>
+            <div class="rating">★★★★★ 4.9</div>
+            <div class="price">Rp 189.000</div>
+            <a href="#" class="btn-primary" style="padding:0.5rem 1.2rem; font-size:0.9rem;">Beli Sekarang</a>
+          </div>
+        </article>
+        <!-- article 4 -->
+        <article class="product-card">
+          <div class="product-img">👟🌱</div>
+          <div class="product-info">
+            <h3>Eco Sneakers Kanvas</h3>
+            <p>Sepatu ramah lingkungan, sol daur ulang</p>
+            <div class="rating">★★★★☆ 4.7</div>
+            <div class="price">Rp 349.000</div>
+            <a href="#" class="btn-primary" style="padding:0.5rem 1.2rem; font-size:0.9rem;">Beli Sekarang</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================== SECTION 2 : KATEGORI + PROMO ARTIKEL ========================== -->
+    <section aria-labelledby="promo-spesial">
+      <h2 id="promo-spesial">💡 Promo & Program UMKM</h2>
+      <!-- article untuk promo spesial (konten non produk / highlight) -->
+      <article class="promo-article">
+        <div class="promo-text">
+          <h3>Diskon Akhir Tahun 🎉</h3>
+          <p>Dapatkan potongan s/d 30% untuk pembelian produk lokal pilihan. <br>Gratis ongkir seluruh Indonesia!</p>
+          <a href="#" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Lihat Katalog</a>
+        </div>
+        <div style="font-size: 3.5rem;">🏷️✨</div>
+      </article>
+    </section>
+
+    <!-- ========================== SECTION 3 : TESTIMONI / BLOG RINGAN (Mengandung Article lagi) ========================== -->
+    <section aria-labelledby="cerita-pengrajin">
+      <h2 id="cerita-pengrajin">🧵 Dari Pengrajin untuk Dunia</h2>
+      <div class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+        <!-- article sebagai kartu cerita -->
+        <article class="product-card" style="background:#fffaf5;">
+          <div class="product-img" style="background:#f4e0d0;">👩‍🎨</div>
+          <div class="product-info">
+            <h3>Ibu Ratna - Pengrajin Tenun</h3>
+            <p>"Bergabung dengan Lokalana membantu usaha saya naik kelas. Kini 20 perajin terbantu!"</p>
+            <div style="margin-top: 0.8rem;"><span style="font-weight:600;">⭐ UMKM Berdaya</span></div>
+          </div>
+        </article>
+        <article class="product-card" style="background:#fffaf5;">
+          <div class="product-img" style="background:#f4e0d0;">♻️🌏</div>
+          <div class="product-info">
+            <h3>Eco-Produksi Zero Waste</h3>
+            <p>Kami mendukung pengurangan limbah tekstil dan pemberdayaan ekonomi lokal yang berkelanjutan.</p>
+            <a href="#" style="color:#c5723a; font-weight:500;">Baca selengkapnya →</a>
+          </div>
+        </article>
+        <article class="product-card" style="background:#fffaf5;">
+          <div class="product-img" style="background:#f4e0d0;">🏡</div>
+          <div class="product-info">
+            <h3>Koleksi Rumah Batik</h3>
+            <p>Kolaborasi dengan 12 sentra batik dari Jawa, Madura, dan Palembang. Setiap karya memiliki sertifikat keaslian.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div> <!-- tutup container main -->
+</main>
+
+<!-- ========================== FOOTER (Semantic) ========================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>🌱 Lokalana</h4>
+        <p>Platform UMKM fesyen & kerajinan lokal. Misi kami: membawa karya anak bangsa mendunia dan menyejahterakan perajin.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Cara Berbelanja</a></li>
+          <li><a href="#">Metode Pembayaran</a></li>
+          <li><a href="#">Pengiriman & Retur</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hubungi Kami</h4>
+        <p>📞 +62 812 3456 7890</p>
+        <p>✉️ hello@lokalana.id</p>
+        <p>📍 Yogyakarta, Indonesia</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami</h4>
+        <p>Instagram • TikTok • Facebook</p>
+        <p style="margin-top: 0.5rem;">✨ #BanggaBuatanIndonesia</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Lokalana – Mendukung UMKM Nusantara. Seluruh hak cipta dilindungi.</p>
+      <p style="margin-top: 0.4rem;">Dibangun dengan semangat gotong royong dan HTML5 semantic.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Catatan: Seluruh elemen semantic HTML5 telah digunakan: header, nav, section, article, footer -->
+</body>
+</html>
