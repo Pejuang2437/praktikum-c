@@ -1,0 +1,13 @@
+{
+  "name": "praktikum-pemrograman-dasar",
+  "version": "1.0.0",
+  "description": "Server HTTP untuk praktikum pemrograman dasar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "biodata": "node biodata.js"
+  },
+  "keywords": ["nodejs", "http", "praktikum"],
+  "author": "Ahmad Ghazy Aulia",
+  "license": "ISC"
+}
